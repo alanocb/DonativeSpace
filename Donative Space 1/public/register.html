@@ -1,0 +1,35 @@
+
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Register</title>
+  <link rel="stylesheet" href="/stylesheets/style.css">
+  <link rel="stylesheet" href="stylesheets/styleLogin.css">
+  <script src="./javascripts/utils/verifications.js"></script>
+  <script src="./javascripts/requests/usersRequests.js"></script>
+  <script src="./javascripts/register.js"></script>
+  <script src="https://kit.fontawesome.com/cf6fa412bd.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+  <div class="container">
+    <div class="buttonsForm">
+        <div class="btnColor"></div>
+        <button id="btnSignin">Sign up</button>
+    </div>
+    <form action="javascript:register()">
+
+      <input type="text" autocomplete="username" id="name" />
+      <i class="fas fa-envelope iEmail"></i>
+      <input type="password" autocomplete="new-password" id="password" />
+      <i class="fas fa-lock iPassword"></i>
+      <p id="msg" class="warning"></p>
+      <button type="submit"value="Register" >Sign up</button>
+      <p><a href="login.html">Login page</a></p>
+  </form>
+  </div>
+  <script src="javascripts/login.js"></script>
+</body>
+
+</html>

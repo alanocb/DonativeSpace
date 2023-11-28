@@ -1,0 +1,46 @@
+body{
+	margin: 0;
+	font-family: 'Roboto', sans-serif;
+}
+a{
+	text-decoration: none;
+}
+.red{
+	color: #f33f3f;
+}
+.white{
+	color: rgb(254, 249, 249);
+}
+.black{
+    color: rgb(20, 20, 20);
+}
+/*navbar */
+
+header{
+	position: sticky;
+	top: 0;
+}
+.navbar{
+	display: flex;
+	background-color: rgb(254, 249, 249);
+	align-items: center;
+	justify-content: space-between;
+	font-size: larger;
+	border-radius: 4px;
+}
+.navbar ul {
+	list-style-type: none;
+	display: flex;
+}
+.navbar ul li a{
+	position: relative;
+	padding: 20px 20px;
+    transition: all 0.3s ease;
+}
+.active{
+	position: relative;
+}
+.navbar ul li a:hover{
+
+   color: pink; 
+}

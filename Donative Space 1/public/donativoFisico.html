@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+  <link rel="stylesheet" href="stylesheets/style.css">
+  <link rel="stylesheet" href="stylesheets/body.css">
+  <link rel="stylesheet" href="stylesheets/doar.css">
+  <script src="./javascripts/doar.js"></script>
+  <script src="./javascripts/requests/donativofisicoRequests.js"></script>
+  <script src="./javascripts/donativofisico.js"></script>
+  <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+<body>
+  <!-- Navbar-->
+  <header>
+    <nav class="navbar py-2">
+      <a href="">
+        <img src="./img/logo1.png" alt="logo">
+      </a>
+      <ul class="m-0">
+
+        <li><a href="donativoOnline.html" class="black">Doanatio Online</a></li>
+        <li><a href="listadonativofisico.html" class="black">Lista de Donativos</a></li>
+        <li><a href="profile.html" class="black">Profile</a></li>
+
+
+      </ul>
+    </nav>
+  </header>
+  <main>
+    <section class="col-md-6 offset-md-3">
+      <span class="anchor" id="formPayment"></span>
+      <hr class="my-5">
+      <!-- form card cc payment -->
+      <section class="card card-outline-secondary">
+        <section class="card-body">
+          <h3 class="text-center">Donativo Físico</h3>
+          <hr>
+          <section class="alert alert-info p-2 pb-3">
+            <a class="close font-weight-normal initialism" data-dismiss="alert" href="#"></a>
+            Preencha todos os Campos.
+          </section>
+          <form class="form" role="form" id="donativoForm" action="/api/donativofisico" method="post">
+            <div class="form-row">
+              <div class="form-group col-md-4">
+                <label for="telefone">Telefone:</label>
+                <input type="text" id="telefone" name="telefone" required>
+              </div>
+
+              <div class="form-group col-md-4">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+              </div>
+
+              <div class="form-group col-md-4">
+                <label for="endereco">Endereço:</label>
+                <input type="text" id="endereco" name="endereco" required>
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-group col-md-4">
+                <label for="doador_id">Número do Doador:</label>
+                <input type="text" id="doador_id" name="doador_id" required>
+              </div>
+
+              <div class="form-group col-md-4">
+                <label for="org_id">Número da Organização:</label>
+                <input type="text" id="org_id" name="org_id" required>
+              </div>
+
+              <div class="form-group col-md-4">
+                <label for="subcategoria_id">Número da Subcategoria:</label>
+                <input type="text" id="subcategoria_id" name="subcategoria_id" required>
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-group col-md-4">
+                <label for="donativo_quantidade">Quantidade:</label>
+                <input type="text" id="donativo_quantidade" name="donativo_quantidade" required>
+              </div>
+
+              <div class="form-group col-md-4">
+                <label for="data_recolha">Data de Recolha:</label>
+                <input type="date" id="data_recolha" name="data_recolha" required style="width: 100%;">
+              </div>
+
+              <div class="form-group col-md-4">
+                <label for="donativo_observacao">Observação:</label>
+                <textarea id="donativo_observacao" name="donativo_observacao"></textarea>
+              </div>
+            </div>
+            <button type="submit">Enviar</button>
+          </form>
+        </section>
+      </section>
+    </section>
+  </main>
+  <body>
+   
+    <footer>
+      <p>&copy; 2023 My Website. All rights reserved.</p>
+      <p>Contact: donativespace@gmail.com</p>
+    </footer>
+  </body>
+
+</html>
+
+
+

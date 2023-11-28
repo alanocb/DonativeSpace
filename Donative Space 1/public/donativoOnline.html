@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+  <link rel="stylesheet" href="stylesheets/style.css">
+  <link rel="stylesheet" href="stylesheets/mapa.css">
+  <link rel="icon" href="img/doacao.png" type="image/x-icon">
+  <script src="./javascripts/doar.js"></script>
+  <script  src="./javascripts/donativoonline.js"></script>
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+  <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+  <header>
+    <nav class="navbar py-2">
+      <a href="">
+        <img src="./img/logo1.png" alt="logo">
+      </a>
+      <ul class="m-0">
+      
+        <li><a href="donativoOnline.html" class="black">Doanatio Online</a></li>
+        <li><a href="donativoFisico.html" class="black">Donativo Fisico</a></li>
+        <li><a href="profile.html" class="black">Profile</a></li>
+
+      </ul>
+    </nav>
+      </ul>
+    </nav>
+  </header>
+
+<body>
+  <main>
+    <section class="col-md-6 offset-md-3">
+      <span class="anchor" id="formPayment"></span>
+      <hr class="my-5">
+      <!-- form card cc payment -->
+      <section class="card card-outline-secondary">
+        <div class="card-body">
+          <h3 class="text-center">Donativo Online</h3>
+          <hr>
+          <div class="alert alert-info p-2 pb-3">
+            <a class="close font-weight-normal initialism" data-dismiss="alert" href="#"><samp>×</samp></a>
+            CVC code is required.
+          </div>
+          <form class="form" role="form" autocomplete="off" action="javascript:validateForm()">
+            <section class="form-group row">
+              <section class="col-md-4">
+                <label class="col-md-12">Nome</label>
+                <input type="text" class="form-control" id="doador_id" placeholder="First and last name">
+              </section>
+              <section class="col-md-4">
+                <label class="col-md-12">Tefone</label>
+                <input type="text" class="form-control" id="telefone" autocomplete="off" maxlength="9"
+                  placeholder="Digite o seu numero de telefone">
+              </section>
+              <section class="col-md-4">
+                <label class="col-md-12">Emaill</label>
+                <input type="email" class="form-control" id="email" autocomplete="off" placeholder="digite o seu email">
+              </section>
+            </section>
+
+            <section class="form-group">
+              <label for="cc_name">Nome do Titular do Cartão</label>
+              <input type="text" class="form-control" id="titular" placeholder="First and last name">
+            </section>
+            <section class="form-group">
+              <label>Número do Cartão</label>
+              <input type="text" class="form-control" id="cartao" autocomplete="off" maxlength="20" pattern="\d{16}"
+                title="digite o numero do cartao">
+            </section>
+            <section class="form-group row">
+              <label class="col-md-12">Data de validade do cartão</label>
+              <section class="col-md-4">
+                <select class="form-control" id="data_validade" size="0">
+                  <option value="01">01</option>
+                  <option value="02">02</option>
+                  <option value="03">03</option>
+                  <option value="04">04</option>
+                  <option value="05">05</option>
+                  <option value="06">06</option>
+                  <option value="07">07</option>
+                  <option value="08">08</option>
+                  <option value="09">09</option>
+                  <option value="10">10</option>
+                  <option value="11">11</option>
+                  <option value="12">12</option>
+                </select>
+              </section>
+              <section class="col-md-4">
+                <select class="form-control" id="data_exp" size="0">
+                  <option>2018</option>
+                  <option>2019</option>
+                  <option>2020</option>
+                  <option>2021</option>
+                  <option>2022</option>
+                  <option>2023</option>
+                  <option>2024</option>
+                  <option>2025</option>
+                  <option>2026</option>
+                </select>
+              </section>
+              <section class="col-md-4">
+                <input type="text" class="form-control" id="cod_cartao"  autocomplete="off" maxlength="14" placeholder="CVC">
+              </section>
+              <section class="col-md-4">
+                <label class="col-md-12">Organizações</label>
+                <select class="form-control" id="org_id" size="0">
+                  <option>Cáritas</option>
+                  <option>A.A.D.C</option>
+                  <option>Acreditar</option>
+                  <option>Alzheimer Portugal</option>
+                </select>
+              </section>
+            </section>
+            <section class="row">
+              <label class="col-md-12">Valor</label>
+            </section>
+            <section class="form-inline">
+              <section class="input-group">
+                <section class="input-group-prepend"><span class="input-group-text">€</span></section>
+                <input type="text" class="form-control text-right" id="valor" placeholder="1">
+                <section class="input-group-append"><span class="input-group-text">.00</span></section>
+              </section>
+            </section>
+            <div id="map"></div>
+              <script
+                src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB41DRUbKWJHPxaFjMAwdrzWzbVKartNGg&callback=initMap&v=weekly"
+                defer
+              ></script>
+            <hr>
+            <section class="form-group row">
+              <section class="col-md-6">
+                <button type="reset" class="btn btn-default btn-lg btn-block">Cancel</button>
+              </section>
+              <section class="col-md-6">
+                <button type="submit" class="btn btn-success btn-lg btn-block">Efectuar</button>
+              </section>
+            </section>
+          </form>
+        </div>
+        </div>
+      </section>
+    </section>
+  </main>
+</body>
+</head>
+
+</html>
+
+
